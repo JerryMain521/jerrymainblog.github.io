@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+          const theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - JerryMain</title>
+    <meta
+      name="description"
+      content="JerryMain 的博客页面，记录生活碎片和技术笔记。"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="is-blog">
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="brand-mark">J</div>
+          <div class="brand-text">
+            <div class="brand-name">JerryMain</div>
+            <div class="brand-tagline">博客 · Blog</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="index.html#home">首页 Home</a>
+          <a href="blog.html">博客 Blog</a>
+          <button class="theme-toggle" aria-label="切换深色/浅色模式">
+            <span class="theme-icon dark-icon">☀</span>
+            <span class="theme-icon light-icon">☽</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section blog-section">
+          <div class="section-header">
+            <h2>Blog Menu</h2>
+            <p class="section-description">
+              Record a vast range of topics, including code, mathematics, and more.
+            </p>
+          </div>
+
+          <div class="blog-toggle">
+            <button class="blog-toggle-btn is-active" data-blog-view="newest">
+              Newest Updated
+            </button>
+            <button class="blog-toggle-btn" data-blog-view="categories">
+              Categories
+            </button>
+          </div>
+
+          <!-- 最新出炉：你只需要在这里一条条追加文章 -->
+          <div class="blog-view blog-view-newest" data-view="newest">
+            <div class="ins-grid">
+              <article class="ins-item blog-item" data-category="Python">
+                <div class="ins-photo ins-photo-1"></div>
+                <div class="ins-meta">
+                  <div class="ins-row">
+                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-date">Python</span>
+                  </div>
+                  <p class="ins-caption">
+                    这里本来应该是一篇和 Python 有关的技术博客，比如某个脚本、工具或调试记录。
+                  </p>
+                </div>
+              </article>
+
+              <article class="ins-item blog-item" data-category="Python">
+                <div class="ins-photo ins-photo-2"></div>
+                <div class="ins-meta">
+                  <div class="ins-row">
+                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-date">Python</span>
+                  </div>
+                  <p class="ins-caption">
+                    又一篇和 Python 相关的占位文章，将来可以写某个库的用法或者踩坑记录。
+                  </p>
+                </div>
+              </article>
+
+              <article class="ins-item blog-item" data-category="Frontend">
+                <div class="ins-photo ins-photo-3"></div>
+                <div class="ins-meta">
+                  <div class="ins-row">
+                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-date">Frontend</span>
+                  </div>
+                  <p class="ins-caption">
+                    这里以后可以放与前端相关的内容，比如 CSS 动效、组件拆分、性能优化等。
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- 按分类：由上面的最新文章自动生成，无需手动维护 -->
+          <div
+            class="blog-view blog-view-categories"
+            data-view="categories"
+          ></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="year"></span> JerryMain</span>
+        <span class="dot">·</span>
+        <span>Blog page</span>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+  </html>
+

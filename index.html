@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+          const theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JerryMain - Personal Site</title>
+    <meta
+      name="description"
+      content="JerryMain 的个人网站与博客 | Personal site & blog of JerryMain."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="brand-mark">J</div>
+          <div class="brand-text">
+            <div class="brand-name">JerryMain</div>
+            <div class="brand-tagline">个人网站 · Personal Site</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#home">首页 Home</a>
+          <a href="blog.html">博客 Blog</a>
+          <button class="theme-toggle" aria-label="切换深色/浅色模式">
+            <span class="theme-icon dark-icon">☀</span>
+            <span class="theme-icon light-icon">☽</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <section id="home" class="landing">
+          <div class="landing-inner">
+            <h1 class="landing-name">JerryMain's Blog</h1>
+            <p class="landing-tagline">
+              This site will host ideas.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="year"></span> JerryMain</span>
+        <span class="dot">·</span>
+        <span>Built with HTML & CSS</span>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+  </html>
+
