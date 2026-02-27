@@ -16,123 +16,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>文章标题 - JerryMain</title>
-    <meta name="description" content="这篇文章的简短描述。" />
+    <title>README - JerryMain</title>
+    <meta
+      name="description"
+      content="JerryMain 网站介绍 · Introduction to JerryMain's personal site."
+    />
     <link rel="stylesheet" href="../style.css" />
-    <style>
-      /* 文章正文样式 */
-      .post-container {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 2.5rem 1.5rem 4rem;
-      }
-
-      .post-meta {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 2rem;
-        font-size: 0.85rem;
-        opacity: 0.6;
-      }
-
-      .post-category {
-        background: var(--accent, #646cff);
-        color: #fff;
-        padding: 0.15rem 0.6rem;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        opacity: 1;
-      }
-
-      .post-title {
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.3;
-        margin-bottom: 0.75rem;
-      }
-
-      .post-desc {
-        font-size: 1.05rem;
-        opacity: 0.65;
-        margin-bottom: 2.5rem;
-        line-height: 1.7;
-      }
-
-      .post-divider {
-        border: none;
-        border-top: 1px solid var(--border, #e5e7eb);
-        margin-bottom: 2.5rem;
-      }
-
-      .post-body {
-        font-size: 1rem;
-        line-height: 1.85;
-      }
-
-      .post-body h2 {
-        font-size: 1.35rem;
-        font-weight: 600;
-        margin: 2.5rem 0 1rem;
-      }
-
-      .post-body h3 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin: 2rem 0 0.75rem;
-      }
-
-      .post-body p {
-        margin-bottom: 1.25rem;
-      }
-
-      .post-body pre {
-        background: var(--code-bg, #f4f4f5);
-        border-radius: 8px;
-        padding: 1.25rem;
-        overflow-x: auto;
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-      }
-
-      .post-body code {
-        font-family: 'Fira Code', 'Courier New', monospace;
-        font-size: 0.88rem;
-        background: var(--code-bg, #f4f4f5);
-        padding: 0.15rem 0.4rem;
-        border-radius: 4px;
-      }
-
-      .post-body pre code {
-        background: none;
-        padding: 0;
-      }
-
-      .post-body blockquote {
-        border-left: 3px solid var(--accent, #646cff);
-        margin: 1.5rem 0;
-        padding: 0.5rem 1.25rem;
-        opacity: 0.75;
-        font-style: italic;
-      }
-
-      .post-back {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-        opacity: 0.6;
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-
-      .post-back:hover {
-        opacity: 1;
-      }
-    </style>
   </head>
-  <body>
+  <body class="is-blog">
     <div class="page">
       <header class="site-header">
         <div class="brand">
@@ -153,64 +44,71 @@
       </header>
 
       <main>
-        <div class="post-container">
+        <article class="post-layout post-glass">
+          <header class="post-header">
+            <p class="post-label">Pinned · 置顶</p>
+            <h1 class="post-title">README</h1>
+            <p class="post-meta">JerryMain · 2026.2.27</p>
+          </header>
 
-          <!-- 返回按钮 -->
-          <a href="../blog.html" class="post-back">← 返回博客列表</a>
-
-          <!-- 文章头部信息 -->
-          <div class="post-meta">
-            <span class="post-category">Python</span>  <!-- 改成你的分类 -->
-            <span>2025年6月1日</span>                  <!-- 改成发布日期 -->
-            <span>· 5 min read</span>                  <!-- 可选：阅读时长 -->
-          </div>
-
-          <h1 class="post-title">在这里写你的文章标题</h1>
-          <p class="post-desc">这里写一句话简介，会显示在标题下方。</p>
-
-          <hr class="post-divider" />
-
-          <!-- ✍️ 正文内容区域，在这里写你的文章 -->
-          <div class="post-body">
-
-            <h2>第一节标题</h2>
+          <div class="post-content">
             <p>
-              在这里写正文内容。支持普通段落、标题、代码块、引用等格式。
+              Welcome to <strong style="color: var(--accent);">JerryMain's Blog</strong> — a personal corner of the internet where ideas find their home.
             </p>
 
-            <h2>代码示例</h2>
-            <p>下面是一个 Python 代码示例：</p>
-            <pre><code>def hello():
-    print("Hello, World!")
-
-hello()</code></pre>
-
-            <h2>引用</h2>
-            <blockquote>
-              这里可以放引用内容，比如某段话或者名言。
-            </blockquote>
-
-            <h2>小结</h2>
             <p>
-              在这里写文章的结尾总结。
+              This site is built from scratch with plain HTML &amp; CSS, no frameworks, no clutter. Just content and craft.
             </p>
 
-          </div>
-          <!-- 正文结束 -->
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
 
-        </div>
+            <h2 style="font-size: 16px; margin: 0 0 10px; color: var(--accent-secondary); letter-spacing: 0.08em; text-transform: uppercase;">What you'll find here</h2>
+
+            <p>
+              The blog covers a broad range of topics — from code and mathematics to personal notes and half-finished ideas. Posts may be written in Chinese, English, or both.
+            </p>
+
+            <p>
+              Current categories include <span style="color: var(--accent);">Python</span>, <span style="color: var(--accent);">Frontend</span>, and README file tagged under <span style="color: var(--accent);">Pinned</span>. More will follow as the site grows.
+            </p>
+
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
+
+            <h2 style="font-size: 16px; margin: 0 0 10px; color: var(--accent-secondary); letter-spacing: 0.08em; text-transform: uppercase;">Design</h2>
+
+            <p>
+              Light and dark modes are supported and automatically respect your system preference. You can toggle them manually at any time using the button in the header.
+            </p>
+
+            <p>
+              The color palette leans into deep navy backgrounds with cyan and pink accents — calm enough to read, distinct enough to remember.
+            </p>
+
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
+
+            <p style="color: var(--text-muted); font-size: 13px;">
+              That's all for now. More posts are on the way.
+            </p>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="../blog.html" class="post-back-link">← Back to Blog</a>
+          </div>
+        </article>
       </main>
 
       <footer class="site-footer">
-        <span>© <span id="year"></span> JerryMain</span>
+        <span>© <span id="year-footer"></span> JerryMain</span>
         <span class="dot">·</span>
-        <span>Blog page</span>
+        <span>README</span>
       </footer>
     </div>
 
     <script src="../main.js"></script>
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      const y = new Date().getFullYear();
+      document.getElementById("year").textContent = y;
+      document.getElementById("year-footer").textContent = y;
     </script>
   </body>
 </html>
