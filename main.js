@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!categoryMap.has(category)) {
           categoryMap.set(category, []);
         }
-        categoryMap.get(category).push(item);
+        const node = item.parentElement.tagName === "A" ? item.parentElement : item;  // ← 改这里
+        categoryMap.get(category).push(node);
       });
 
       const sortedCategories = Array.from(categoryMap.keys()).sort((a, b) => {
