@@ -4,11 +4,7 @@
     (function () {
       try {
         const saved = localStorage.getItem("theme");
-          const theme =
-          saved ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
+        const theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         document.documentElement.dataset.theme = theme;
       } catch (e) {}
     })();

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const theme =
+          saved ||
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    })();
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>README - JerryMain</title>
+    <meta
+      name="description"
+      content="JerryMain 网站介绍 · Introduction to JerryMain's personal site."
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="is-blog">
+    <div class="page">
+      <header class="site-header">
+        <div class="brand">
+          <div class="brand-mark">J</div>
+          <div class="brand-text">
+            <div class="brand-name">JerryMain</div>
+            <div class="brand-tagline">博客 · Blog</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="../index.html#home">首页 Home</a>
+          <a href="../blog.html">博客 Blog</a>
+          <button class="theme-toggle" aria-label="切换深色/浅色模式">
+            <span class="theme-icon dark-icon">☀</span>
+            <span class="theme-icon light-icon">☽</span>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <article class="post-layout post-glass">
+          <header class="post-header">
+            <p class="post-label">Pinned · 置顶</p>
+            <h1 class="post-title">README</h1>
+            <p class="post-meta">JerryMain · 2026.2.27</p>
+          </header>
+
+          <div class="post-content">
+            <p>
+              Welcome to <strong style="color: var(--accent);">JerryMain's Blog</strong> — a personal corner of the internet where ideas find their home.
+            </p>
+
+            <p>
+              This site is built from scratch with plain HTML &amp; CSS, no frameworks, no clutter. Just content and craft.
+            </p>
+
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
+
+            <h2 style="font-size: 16px; margin: 0 0 10px; color: var(--accent-secondary); letter-spacing: 0.08em; text-transform: uppercase;">What you'll find here</h2>
+
+            <p>
+              The blog covers a broad range of topics — from code and mathematics to personal notes and half-finished ideas. Posts may be written in Chinese, English, or both.
+            </p>
+
+            <p>
+              Current categories include <span style="color: var(--accent);">Python</span>, <span style="color: var(--accent);">Frontend</span>, and README file tagged under <span style="color: var(--accent);">Pinned</span>. More will follow as the site grows.
+            </p>
+
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
+
+            <h2 style="font-size: 16px; margin: 0 0 10px; color: var(--accent-secondary); letter-spacing: 0.08em; text-transform: uppercase;">Design</h2>
+
+            <p>
+              Light and dark modes are supported and automatically respect your system preference. You can toggle them manually at any time using the button in the header.
+            </p>
+
+            <p>
+              The color palette leans into deep navy backgrounds with cyan and pink accents — calm enough to read, distinct enough to remember.
+            </p>
+
+            <hr style="border: none; border-top: 1px dashed rgba(148,163,184,0.35); margin: 20px 0;" />
+
+            <p style="color: var(--text-muted); font-size: 13px;">
+              That's all for now. More posts are on the way.
+            </p>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <a href="../blog.html" class="post-back-link">← Back to Blog</a>
+          </div>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="year-footer"></span> JerryMain</span>
+        <span class="dot">·</span>
+        <span>README</span>
+      </footer>
+    </div>
+
+    <script src="../main.js"></script>
+    <script>
+      const y = new Date().getFullYear();
+      document.getElementById("year").textContent = y;
+      document.getElementById("year-footer").textContent = y;
+    </script>
+  </body>
+</html>

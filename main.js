@@ -54,9 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
         categoryMap.get(category).push(item);
       });
 
-      const sortedCategories = Array.from(categoryMap.keys()).sort((a, b) =>
-        a.localeCompare(b, "en", { sensitivity: "base" })
-      );
+      const sortedCategories = Array.from(categoryMap.keys()).sort((a, b) => {
+        if (a === "Pinned") return -1;
+        if (b === "Pinned") return 1;
+        return a.localeCompare(b, "en", { sensitivity: "base" });
+      });
 
       sortedCategories.forEach((category) => {
         const posts = categoryMap.get(category);
