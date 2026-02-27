@@ -49,6 +49,4 @@ Hosted via [GitHub Pages](https://pages.github.com/). Any push to the `main` bra
 
 ---
 
-
 © JerryMain
-

@@ -59,6 +59,9 @@
             <button class="blog-toggle-btn" data-blog-view="categories">
               Categories
             </button>
+            <button class="blog-toggle-btn" data-blog-view="alphabetical">
+              A → Z
+            </button>
           </div>
 
           <!-- 最新出炉：你只需要在这里一条条追加文章 -->
@@ -80,11 +83,11 @@
                 </article>
               </a>
 
-              <article class="ins-item blog-item" data-category="Python">
+              <article class="ins-item blog-item" data-category="Python" data-date="2026-02">
                 <div class="ins-photo ins-photo-1"></div>
                 <div class="ins-meta">
                   <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-title">CC</span>
                     <span class="ins-date">Python</span>
                   </div>
                   <p class="ins-caption">
@@ -93,11 +96,11 @@
                 </div>
               </article>
 
-              <article class="ins-item blog-item" data-category="Python">
+              <article class="ins-item blog-item" data-category="Python" data-date="2026-02">
                 <div class="ins-photo ins-photo-2"></div>
                 <div class="ins-meta">
                   <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-title">BBB</span>
                     <span class="ins-date">Python</span>
                   </div>
                   <p class="ins-caption">
@@ -106,11 +109,11 @@
                 </div>
               </article>
 
-              <article class="ins-item blog-item" data-category="Frontend">
+              <article class="ins-item blog-item" data-category="Frontend" data-date="2026-01">
                 <div class="ins-photo ins-photo-3"></div>
                 <div class="ins-meta">
                   <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
+                    <span class="ins-title">AAA</span>
                     <span class="ins-date">Frontend</span>
                   </div>
                   <p class="ins-caption">
@@ -126,6 +129,12 @@
             class="blog-view blog-view-categories"
             data-view="categories"
           ></div>
+
+          <!-- 按字典序：由最新文章按标题 A→Z 自动生成，无需手动维护 -->
+          <div
+            class="blog-view blog-view-alphabetical"
+            data-view="alphabetical"
+          ></div>
         </section>
       </main>
 
@@ -139,4 +148,3 @@
     <script src="main.js"></script>
   </body>
   </html>
-
