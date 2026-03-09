@@ -59,6 +59,9 @@
             <button class="blog-toggle-btn" data-blog-view="categories">
               Categories
             </button>
+            <button class="blog-toggle-btn" data-blog-view="alphabetical">
+              A → Z
+            </button>
           </div>
 
           <!-- 最新出炉：你只需要在这里一条条追加文章 -->
@@ -80,44 +83,21 @@
                 </article>
               </a>
 
-              <article class="ins-item blog-item" data-category="Python">
-                <div class="ins-photo ins-photo-1"></div>
-                <div class="ins-meta">
-                  <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
-                    <span class="ins-date">Python</span>
+              <a href="posts/20260228.html" style="text-decoration: none;color:inherit">
+                <article class="ins-item blog-item" data-category="Python" data-date="2026-02">
+                  <div class="ins-photo ins-photo-1"></div>
+                  <div class="ins-meta">
+                    <div class="ins-row">
+                      <span class="ins-title">HTML,CSS,JavaScript Tutorial</span>
+                      <span class="ins-date">Frontend</span>
+                    </div>
+                    <p class="ins-caption">
+                      这篇是AI写的，具体样式等我后改。
+                    </p>
                   </div>
-                  <p class="ins-caption">
-                    这里本来应该是一篇和 Python 有关的技术博客，比如某个脚本、工具或调试记录。
-                  </p>
-                </div>
-              </article>
+                </article>
+              </a>
 
-              <article class="ins-item blog-item" data-category="Python">
-                <div class="ins-photo ins-photo-2"></div>
-                <div class="ins-meta">
-                  <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
-                    <span class="ins-date">Python</span>
-                  </div>
-                  <p class="ins-caption">
-                    又一篇和 Python 相关的占位文章，将来可以写某个库的用法或者踩坑记录。
-                  </p>
-                </div>
-              </article>
-
-              <article class="ins-item blog-item" data-category="Frontend">
-                <div class="ins-photo ins-photo-3"></div>
-                <div class="ins-meta">
-                  <div class="ins-row">
-                    <span class="ins-title">这个人很懒，什么都没写</span>
-                    <span class="ins-date">Frontend</span>
-                  </div>
-                  <p class="ins-caption">
-                    这里以后可以放与前端相关的内容，比如 CSS 动效、组件拆分、性能优化等。
-                  </p>
-                </div>
-              </article>
             </div>
           </div>
 
@@ -125,6 +105,12 @@
           <div
             class="blog-view blog-view-categories"
             data-view="categories"
+          ></div>
+
+          <!-- 按字典序：由最新文章按标题 A→Z 自动生成，无需手动维护 -->
+          <div
+            class="blog-view blog-view-alphabetical"
+            data-view="alphabetical"
           ></div>
         </section>
       </main>
@@ -139,4 +125,3 @@
     <script src="main.js"></script>
   </body>
   </html>
-

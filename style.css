@@ -850,3 +850,26 @@ html[data-theme="light"] .post-glass {
   border-color: rgba(15, 23, 42, 0.1);
   box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08);
 }
+
+.divider {
+    border: none;
+    border-top: 1px dashed rgba(148, 163, 184, 0.35);
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 16px;
+    margin: 0 0 10px;
+    color: var(--accent-secondary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.text-muted-sm {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.mt-32 {
+    margin-top: 32px;
+}
