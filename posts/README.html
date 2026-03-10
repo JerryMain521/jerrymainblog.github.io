@@ -100,6 +100,20 @@
 
                         <hr class="divider" />
 
+                        <h2 class="section-title">Code Example</h2>
+                  
+                            <p>
+                                Use <code>renderMathInElement()</code> for code editing.
+                            </p>
+                            <pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () => {
+    renderMathInElement(document.body, {
+        delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$',  right: '$',  display: false }
+        ]
+    });
+});</code></pre>
+
                         <h2 class="section-title">Formula Example</h2>
                         <p>
                             This is the Gaussian integral.
