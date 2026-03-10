@@ -873,3 +873,110 @@ html[data-theme="light"] .post-glass {
 .mt-32 {
     margin-top: 32px;
 }
+/* ── Code Blocks ── */
+
+:root {
+    --code-bg:            #1a1b26;
+    --code-border:        rgba(148, 163, 184, 0.12);
+    --code-shadow:        0 4px 24px rgba(2, 6, 23, 0.55);
+    --code-inline-bg:     rgba(34, 211, 238, 0.08);
+    --code-inline-border: rgba(34, 211, 238, 0.18);
+    --code-inline-color:  #22d3ee;
+    /* tokyo-night-dark tokens */
+    --hljs-base:     #9aa5ce;
+    --hljs-comment:  #565f89;
+    --hljs-tag:      #f7768e;
+    --hljs-number:   #ff9e64;
+    --hljs-built_in: #e0af68;
+    --hljs-keyword:  #bb9af7;
+    --hljs-selector: #73daca;
+    --hljs-string:   #9ece6a;
+    --hljs-section:  #7aa2f7;
+    --hljs-title:    #7dcfff;
+    --hljs-punct:    #c0caf5;
+}
+
+html[data-theme="light"] {
+    --code-bg:            #d5d6db;
+    --code-border:        rgba(15, 23, 42, 0.1);
+    --code-shadow:        0 4px 16px rgba(15, 23, 42, 0.07);
+    --code-inline-bg:     rgba(14, 165, 233, 0.08);
+    --code-inline-border: rgba(14, 165, 233, 0.2);
+    --code-inline-color:  #0369a1;
+    /* tokyo-night-light tokens */
+    --hljs-base:     #565a6e;
+    --hljs-comment:  #9699a3;
+    --hljs-tag:      #8c4351;
+    --hljs-number:   #965027;
+    --hljs-built_in: #8f5e15;
+    --hljs-keyword:  #5a4a78;
+    --hljs-selector: #33635c;
+    --hljs-string:   #485e30;
+    --hljs-section:  #34548a;
+    --hljs-title:    #0f4b6e;
+    --hljs-punct:    #343b58;
+}
+
+/* 行内代码 */
+.post-content code {
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        "Cascadia Code",
+        ui-monospace,
+        "Courier New",
+        monospace;  
+    font-size: 0.85em;
+    color: var(--code-inline-color);
+    background: var(--code-inline-bg);
+    border: 1px solid var(--code-inline-border);
+    padding: 2px 7px;
+    border-radius: 5px;
+    transition: background 1s ease, border-color 1s ease, color 1s ease;
+}
+
+/* 块级代码容器 */
+.post-content pre {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 18px 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: var(--code-shadow);
+    transition: background 1s ease, border-color 1s ease, box-shadow 1s ease;
+}
+
+.post-content pre code,
+.post-content pre code.hljs {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-family:
+        "JetBrains Mono",
+        "Fira Code",
+        "Cascadia Code",
+        ui-monospace,
+        "Courier New",
+        monospace;  
+    font-size: 13px;
+    line-height: 1.75;
+    display: block;
+    color: var(--hljs-base);
+    transition: color 1s ease;
+}
+
+/* highlight.js token 颜色，全部平滑切换 */
+.hljs-comment, .hljs-meta                                    { color: var(--hljs-comment);  transition: color 1s ease; }
+.hljs-deletion, .hljs-tag, .hljs-variable.language_          { color: var(--hljs-tag);       transition: color 1s ease; }
+.hljs-number, .hljs-variable, .hljs-type,
+.hljs-params, .hljs-template-variable                        { color: var(--hljs-number);    transition: color 1s ease; }
+.hljs-attribute, .hljs-built_in                              { color: var(--hljs-built_in);  transition: color 1s ease; }
+.hljs-attr, .hljs-operator, .hljs-name, .hljs-keyword        { color: var(--hljs-keyword);   transition: color 1s ease; }
+.hljs-selector-tag                                           { color: var(--hljs-selector);  transition: color 1s ease; }
+.hljs-string, .hljs-addition, .hljs-quote, .hljs-symbol      { color: var(--hljs-string);    transition: color 1s ease; }
+.hljs-code, .hljs-formula, .hljs-section                     { color: var(--hljs-section);   transition: color 1s ease; }
+.hljs-title, .hljs-title.class_, .hljs-title.function_       { color: var(--hljs-title);     transition: color 1s ease; }
+.hljs-punctuation                                            { color: var(--hljs-punct);     transition: color 1s ease; }
