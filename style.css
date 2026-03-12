@@ -65,6 +65,7 @@
   --accent-soft: rgba(34, 211, 238, 0.18);
   --accent-strong: #0ea5e9;
   --accent-secondary: #e879f9;
+  --accent-secondary2: #8179f9;
   --text-main: #e5f2ff;
   --text-muted: #94a3b8;
   --border-subtle: rgba(148, 163, 184, 0.6);
@@ -869,6 +870,14 @@ html[data-theme="light"] .post-glass {
     font-size: 16px;
     margin: 0 0 10px;
     color: var(--accent-secondary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-title2 {
+    font-size: 14px;
+    margin: 0 0 10px;
+    color: var(--accent-secondary2);
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }

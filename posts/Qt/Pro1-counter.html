@@ -110,22 +110,180 @@
                         <h2 class="section-title">Files Explantion</h2>
 
                         <p>
-                            <strong>CMakesList.txt</strong> 这是项目的配置文件，用来描述项目文件之间的关系，也包括使用什么编译器编译，工程入口在哪儿，等等。
+                            <strong style="color: var(--accent);">CMakesList.txt</strong> 这是项目的配置文件，用来描述项目文件之间的关系，也包括使用什么编译器编译，工程入口在哪儿，等等。
                         </p>
 
                         <p>
-                            <strong>mainwindow.ui</strong> 这是项目的界面文件(User Interface)，当然一般不会直接写源代码，双击源文件就可以进入Qt准备好的可视化界面设计。
+                            <strong style="color: var(--accent);">mainwindow.ui</strong> 这是项目的界面文件(User Interface)，当然一般不会直接写源代码，双击源文件就可以进入Qt准备好的可视化界面设计。
                         </p>
 
                         <p>
-                            <strong>main.cpp</strong> 顾名思义，这是项目的入口文件。
+                            <strong style="color: var(--accent);">main.cpp</strong> 顾名思义，这是项目的入口文件。
                         </p>
 
                         <p>
-                            剩下的两个文件(<strong>mainwindow.h, mainwindow.cpp</strong>)基本就是项目的主体，他们相互调用，相互帮助。为了避免单个文件内容过大，头文件用来声明函数，源文件则用来编写函数。
+                            剩下的两个文件(<strong style="color: var(--accent);">mainwindow.h, mainwindow.cpp</strong>)基本就是项目的主体，他们相互调用，相互帮助。为了避免单个文件内容过大，头文件用来声明函数，源文件则用来编写函数。
                         </p>
+
+                        <h3 class="section-title2">CMakeList.txt</h3>
+                        <p>
+                            代码如下，这是项目构建时自己生成的。
+                        </p>
+                        <pre><code class="bash">cmake_minimum_required(VERSION 3.16)
+
+project(HelloWorld VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+
+set(PROJECT_SOURCES
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+)
+
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(HelloWorld
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET HelloWorld APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+else()
+    if(ANDROID)
+        add_library(HelloWorld SHARED
+            ${PROJECT_SOURCES}
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(HelloWorld
+            ${PROJECT_SOURCES}
+        )
+    endif()
+endif()
+
+target_link_libraries(HelloWorld PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.HelloWorld)
+endif()
+set_target_properties(HelloWorld PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+include(GNUInstallDirs)
+install(TARGETS HelloWorld
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(HelloWorld)
+endif()</code></pre>
                         
-                        <p class="text-muted-sm">That's all for now.</p>
+                        <h3 class="section-title2">main.cpp</h3>
+                        <p>
+                            代码如下，这是也项目构建时自己生成的。
+                        </p>
+                        <pre><code class="language-cpp">#include "mainwindow.h"
+
+#include &ltQApplication&gt
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+}</code></pre>
+                        
+                        <h3 class="section-title2">mainwindow.h</h3>
+                        <p>
+                            代码如下，这是也项目构建时自己生成的。
+                        </p>
+                        <pre><code class="language-cpp">#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include &ltQMainWindow&gt
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainWindow;
+}
+QT_END_NAMESPACE
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private slots:
+    void onPlusClicked();
+    void onMinusClicked();
+
+private:
+    Ui::MainWindow *ui;
+    int m_count=0;
+};
+#endif // MAINWINDOW_H</code></pre>
+                        
+                        <h3 class="section-title2">mainwindow.cpp</h3>
+                        <p>
+                            代码如下，这是也项目构建时自己生成的。
+                        </p>
+                        <pre><code class="language-cpp">#include "mainwindow.h"
+#include "./ui_mainwindow.h"
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    connect(ui->btn1, &QPushButton::clicked, this, &MainWindow::onPlusClicked);
+    connect(ui->btn2, &QPushButton::clicked, this, &MainWindow::onMinusClicked);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::onPlusClicked()
+{
+    m_count++;
+    ui->label->setText(QString::number(m_count));
+}
+
+void MainWindow::onMinusClicked()
+{
+    m_count--;
+    ui->label->setText(QString::number(m_count));
+}</code></pre>
+                        <hr class="divider" />
+                        <p class="text-muted-sm">Building...That's all for now.</p>
                     </div>
                     <!-- Foot -->
                     <div class="mt-32">
