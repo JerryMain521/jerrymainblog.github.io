@@ -659,6 +659,14 @@ main {
   background-image: linear-gradient(135deg, #22c55e, #a3e635);
 }
 
+.ins-photo-4 {
+  background-image: linear-gradient(135deg, #c59122, #e4e113);
+}
+
+.ins-photo-5 {
+  background-image: linear-gradient(135deg, #c522b5, #e635da);
+}
+
 .ins-meta {
   padding: 8px 14px 10px;
   flex: 1;

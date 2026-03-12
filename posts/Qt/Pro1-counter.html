@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem("theme");
+                const theme = 
+                    saved ||
+                    (window.matchMedia("(prefer-color-scheme: dark)").matches
+                        ? "dark"
+                        : "light");
+                document.documentElement.dataset.theme = theme;
+            } catch (e) {}
+        })();
+    </script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>Qt Project - JerryMain</title>
+        <meta name="description" content="This is the description of this article." />
+
+        <link rel="stylesheet" href="../../style.css" />
+     
+        <!-- For Math Formula Insert -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ]
+                });
+            });
+        </script>
+        <!-- For Highlighting -->
+        <script src="../../highlight.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                hljs.highlightAll();
+            });
+        </script>
+    </head>
+    <body class="is-blog">
+        <div class="page">
+            <!-- For Header Navigation -->
+            <header class="site-header">
+                <!-- Left Header -->
+                <div class="brand">
+                    <div class="brand-mark">J</div>
+                    <div class="brand-text">
+                        <div class="brand-name">JerryMain</div>
+                        <div class="brand-tagline">博客 · Blog</div>
+                    </div>
+                </div>
+                <!-- Right Header -->
+                <nav class="nav">
+                    <a href="../../index.html">首页 Home</a>
+                    <a href="../../blog.html">博客 Blog</a>
+                    <button class="theme-toggle" aria-label="切换深色/浅色模式">
+                        <span class="theme-icon dark-icon">☀</span>
+                        <span class="theme-icon light-icon">☽</span>
+                    </button>
+                </nav>
+            </header>
+
+            <!-- For Article -->
+            <main>
+                <article class="post-layout post-glass">
+                    <!-- Preface -->
+                    <header class="post-header">
+                        <p class="post-label">Qt</p>
+                        <h1 class="post-title">An Easy Counter</h1>
+                        <p class="post-meta">JerryMain · 2026.3.12</p>
+                    </header>
+                    <!-- Body -->
+                    <div class="post-content">
+                        <p>
+                            We built an easy counter by Qt, and here are details.
+                        </p>
+                        
+                        <hr class="divider" />
+                        <h2 class="section-title">Former Setup</h2>
+                        
+                        <p>
+                            使用 Qt Creator 18.0.2 (Community) 版本，创建一个 Qt Widgets Application ，使用 CMake for Qt 5 and Qt 6 进行搭建。
+                        </p>
+
+                        <hr class="divider" />
+                        <h2 class="section-title">Project Tree</h2>
+
+                        <p>
+                            一个新创建的项目会有这几个文件，这是他们的树状结构：
+                        </p>
+                        <pre><code class="bash">./
+├── CMakeList.txt
+├── main.cpp
+├── mainwindow.cpp
+├── mainwindow.h
+└── mainwindow.ui</code></pre>
+
+                        <p>
+                            在项目文件夹打开会看到这些文件，但在 Qt Creator 的项目结构有时并非如此，我们可能会看到 Forms, Header Files, Source Files 之类的文件夹，我个人将其理解为一种便于分类的假性文件夹。
+                        </p>
+
+                        <hr class="divider" />
+                        <h2 class="section-title">Files Explantion</h2>
+
+                        <p>
+                            <strong>CMakesList.txt</strong> 这是项目的配置文件，用来描述项目文件之间的关系，也包括使用什么编译器编译，工程入口在哪儿，等等。
+                        </p>
+
+                        <p>
+                            <strong>mainwindow.ui</strong> 这是项目的界面文件(User Interface)，当然一般不会直接写源代码，双击源文件就可以进入Qt准备好的可视化界面设计。
+                        </p>
+
+                        <p>
+                            <strong>main.cpp</strong> 顾名思义，这是项目的入口文件。
+                        </p>
+
+                        <p>
+                            剩下的两个文件(<strong>mainwindow.h, mainwindow.cpp</strong>)基本就是项目的主体，他们相互调用，相互帮助。为了避免单个文件内容过大，头文件用来声明函数，源文件则用来编写函数。
+                        </p>
+                        
+                        <p class="text-muted-sm">That's all for now.</p>
+                    </div>
+                    <!-- Foot -->
+                    <div class="mt-32">
+                        <a href="../../blog.html" class="post-back-link">← Back to Blog</a>
+                    </div>
+                </article>
+            </main>
+            <!-- Page Footer -->
+            <footer class="site-footer">
+                <span>© <span id="year-footer"></span> JerryMain</span>
+                <span class="dot">·</span>
+                <span>README</span>
+            </footer>
+        </div>
+        <script src="../../main.js"></script>
+        <script>
+            const y = new Date().getFullYear();
+            document.getElementById("year").textContent = y;
+            document.getElementById("year-footer").textContent = y;
+        </script>
+    </body>
+</html>
