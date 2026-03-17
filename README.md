@@ -2,7 +2,7 @@
 
 A personal website and blog built with pure HTML, CSS, and JavaScript.
 
-🌐 **Live Site 1:** [jerrymainblog.github.io](https://jerrymainblog.github.io)
+🌐 **~~Live Site 1:~~** [jerrymainblog.github.io](https://jerrymainblog.github.io)
 
 🌐 **Live Site 2:** [jerrymainblog.vercel.app](https://jerrymainblog.vercel.app)
 
