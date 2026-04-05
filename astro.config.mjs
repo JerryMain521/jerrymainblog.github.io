@@ -5,6 +5,8 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
+  site: 'https://jerrymain521.github.io',
+  base: '/website',
   vite: {
     plugins: [tailwindcss()]
   },
