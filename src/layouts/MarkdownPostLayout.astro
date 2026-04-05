@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 <BaseLayout pageTitle={frontmatter.title}>
   <link
@@ -24,7 +25,7 @@ const { frontmatter } = Astro.props;
     <div class="flex flex-wrap gap-2">
       {frontmatter.tags.map((tag: string) => (
         <a
-          href={`/tags/${tag}`}
+          href={`${base}/tags/${tag}`}
           class="px-3 py-1 rounded-full text-xs font-medium border transition-opacity hover:opacity-70"
           style="border-color: var(--color-accent); color: var(--color-accent);"
         >
