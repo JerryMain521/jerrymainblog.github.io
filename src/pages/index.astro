@@ -1,17 +1,19 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle="JerryMain's Site">
+    <div class="space-y-6">
+        <p class="text-xl leading-relaxed" style="color: var(--color-muted);">
+            Welcome to my corner of the internet. I write about technology, programming, and things I find interesting.
+        </p>
+        <div class="flex gap-4 pt-2">
+            <a href="/blog" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium text-white transition-opacity hover:opacity-90" style="background-color: var(--color-accent);">
+                Read Blog
+            </a>
+            <a href="/about" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium border transition-opacity hover:opacity-80" style="border-color: var(--color-border); color: var(--color-text);">
+                About Me
+            </a>
+        </div>
+    </div>
+</BaseLayout>

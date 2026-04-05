@@ -1,0 +1,40 @@
+---
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+---
+<BaseLayout pageTitle={frontmatter.title}>
+  <link
+    slot="head"
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"
+  />
+
+  <div class="space-y-6">
+    <div class="space-y-2">
+      <p class="text-sm italic" style="color: var(--color-muted);">{frontmatter.description}</p>
+      <div class="flex items-center gap-4 text-sm" style="color: var(--color-muted);">
+        <span>{frontmatter.pubDate.toString().slice(0,10)}</span>
+        <span>·</span>
+        <span>作者：{frontmatter.author}</span>
+      </div>
+    </div>
+
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} class="rounded-lg w-full max-w-sm object-cover" />
+
+    <div class="flex flex-wrap gap-2">
+      {frontmatter.tags.map((tag: string) => (
+        <a
+          href={`/tags/${tag}`}
+          class="px-3 py-1 rounded-full text-xs font-medium border transition-opacity hover:opacity-70"
+          style="border-color: var(--color-accent); color: var(--color-accent);"
+        >
+          #{tag}
+        </a>
+      ))}
+    </div>
+
+    <div class="prose prose-indigo dark:prose-invert max-w-none pt-4 border-t" style="border-color: var(--color-border);">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

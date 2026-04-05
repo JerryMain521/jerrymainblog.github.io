@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  :root {
+    --color-bg: #f8f9fa;
+    --color-text: #1a1a2e;
+    --color-muted: #6b7280;
+    --color-border: #e5e7eb;
+    --color-accent: #4f46e5;
+  }
+
+  .dark {
+    --color-bg: #0f0f1a;
+    --color-text: #e8e8f0;
+    --color-muted: #9ca3af;
+    --color-border: #2a2a3e;
+    --color-accent: #818cf8;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 修复 prose 正文颜色在亮色模式下丢失 */
+.prose {
+  color: var(--color-text);
+}
+
+.prose p,
+.prose li,
+.prose blockquote {
+  color: var(--color-text);
+}
+
+/* 修复 KaTeX 字体大小与 Tailwind reset 冲突 */
+.katex * {
+  box-sizing: content-box;
+}
+
+.katex {
+  font-size: 1.1em;
+}
+
+/* 修复行内代码在亮色模式下不可见，并去掉自动反引号 */
+.prose :not(pre) > code {
+  background-color: #e8e8f0;
+  color: #4f46e5;
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.dark .prose :not(pre) > code {
+  background-color: #2a2a3e;
+  color: #818cf8;
+}
+
+@layer utilities {
+  .prose :not(pre) > code::before,
+  .prose :not(pre) > code::after {
+    content: none !important;
+  }
+}

@@ -1,0 +1,11 @@
+---
+const { title, url } = Astro.props;
+---
+<li class="border-b last:border-none py-4" style="border-color: var(--color-border);">
+    <a href={url} class="group flex items-center justify-between">
+        <span class="text-base font-medium transition-colors duration-200 group-hover:opacity-80" style="color: var(--color-accent);">{title}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 opacity-0 group-hover:opacity-60 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </a>
+</li>

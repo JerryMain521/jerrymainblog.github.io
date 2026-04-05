@@ -1,0 +1,13 @@
+---
+import Navigation from "../components/Navigation.astro"
+import ThemeIcon from "./ThemeIcon.astro"
+---
+<header class="sticky top-0 z-50 border-b" style="background-color: var(--color-bg); border-color: var(--color-border);">
+    <nav class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-bold tracking-tight" style="color: var(--color-accent);">JerryMain</a>
+        <div class="flex items-center gap-6">
+            <Navigation />
+            <ThemeIcon />
+        </div>
+    </nav>
+</header>

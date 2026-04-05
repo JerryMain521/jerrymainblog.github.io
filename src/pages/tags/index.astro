@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+const pageTitle = "Tags";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <div class="flex flex-wrap gap-2">
+    {tags.map((tag) => (
+      <a
+        href={`/tags/${tag}`}
+        class="px-3 py-1.5 rounded-full text-sm font-medium border transition-opacity hover:opacity-70"
+        style="border-color: var(--color-accent); color: var(--color-accent);"
+      >
+        #{tag}
+      </a>
+    ))}
+  </div>
+</BaseLayout>
