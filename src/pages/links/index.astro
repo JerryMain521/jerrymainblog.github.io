@@ -21,12 +21,14 @@ const linkEditPage = 'https://github.com/cworld1/astro-theme-pure/blob/main/publ
   <p>They're sorted randomly.</p>
   <h2 id='common-links'>Common Links</h2>
   <FriendList list={friends[0]} />
+  {/*
   <Collapse title='Links with Bad Status'>
     <FriendList list={friends[1]} />
   </Collapse>
   <Collapse title='Link History Book'>
     <Timeline events={linksConf.logbook} />
   </Collapse>
+  */}
   <h2 id='special-links'>Special Links</h2>
   <FriendList list={friends[2]} />
 
@@ -48,6 +50,7 @@ const linkEditPage = 'https://github.com/cworld1/astro-theme-pure/blob/main/publ
     }
   </blockquote>
 
+  {/* 
   <p>
     可通过下方留言或 <a href={linkEditPage} target='_blank'>提交 PR</a> 申请友链。申请说明：<br />
     Apply your link by leaving comment or <a href={linkEditPage} target='_blank'>Submitting a PR</a
@@ -62,4 +65,5 @@ const linkEditPage = 'https://github.com/cworld1/astro-theme-pure/blob/main/publ
     </li>
     <li>内容不违反国家法律 Content does not violate laws</li>
   </ul>
+  */}
 </PageLayout>

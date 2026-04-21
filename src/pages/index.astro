@@ -11,9 +11,9 @@ import Section from '@/components/home/Section.astro'
 import SkillLayout from '@/components/home/SkillLayout.astro'
 import config from '@/site-config'
 
-const languages = ['Html', 'JavaScript', 'CSS', 'Shell']
-const frontend = ['TypeScript', 'Vite', 'Webpack', 'Astro']
-const backend = ['Vercel', 'Waline']
+const languages = ['C', 'C++', 'Python', 'Java']
+const frontend = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Astro']
+const backend = ['...']
 
 const MAX_POSTS = 10
 const allPosts = await getBlogCollection()
@@ -43,13 +43,13 @@ if (!images[imagePath])
       <div class='flex flex-col items-center gap-y-4'>
         <h1 class='text-3xl font-medium'>{config.author}</h1>
         <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-          <Label title='Somewhere'>
+          <Label title='China / Nanjing'>
             <Icon name='location' class='size-5' slot='icon' />
           </Label>
           <Label
-            title='Source code'
+            title='Github'
             as='a'
-            href='https://github.com/cworld1/astro-theme-pure'
+            href='https://github.com/JerryMain521'
             target='_blank'
           >
             <Icon name='github' class='size-5' slot='icon' />
@@ -58,7 +58,7 @@ if (!images[imagePath])
       </div>
 
       {/* Get template */}
-      <a
+      {/*<a
         href='https://github.com/cworld1/astro-theme-pure'
         target='_blank'
         class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
@@ -70,16 +70,17 @@ if (!images[imagePath])
           <span class='size-2 rounded-full bg-green-400'></span>
         </span>
         <p class='font-medium text-muted-foreground'>Get Template</p>
-      </a>
+      </a>*/}
+
     </section>
 
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'>Developer / Designer</p>
+        <p class='text-muted-foreground'>Undergraduate / <em>Retired</em> Minecraft Gamer / Coding Amateur</p>
         <p class='text-muted-foreground'>
-          Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione
-          indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel,
-          at eum oratio possit voluptatum.
+          Got a bit of C++ educated from primary school, but didn't get far.<br />
+          Now learning hardware at SEU, and patching up software online.<br />
+          Majoring in <em>integrated circuit</em> but often <del>pushing Claude</del> to write code.
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
       </Section>
@@ -130,11 +131,15 @@ if (!images[imagePath])
       <Section title='Education'>
         <Card
           as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
-          date='August 2021 - July 2025'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+          heading='Southeast University'
+          subheading='Majoring in Integrated Circuit Design and Integrated System'
+          date='August 2024 - July 2028'
+          href='https://www.seu.edu.cn/'
         >
+          <img
+            class='absolute end-0 z-0 m-0 -my-3 h-full w-1/2 object-cover opacity-40'
+            src='/images/seu.svg'
+          />
           {
             /* <ul class='ms-4 list-disc text-muted-foreground'>
           <li>
@@ -150,24 +155,6 @@ if (!images[imagePath])
       <Section title='Website List'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='Do not go gentle into that good night'
-            imagePath='/src/assets/projects/1.avif'
-          />
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='Old age burn and rave at close of day'
-            imagePath='/src/assets/projects/2.avif'
-          />
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='Rage, rage against the dying of the light'
-            imagePath='/src/assets/projects/3.avif'
-          />
-          <ProjectCard
             href='/projects'
             heading='More projects'
             subheading='Check out more projects'
@@ -176,6 +163,7 @@ if (!images[imagePath])
         </div>
       </Section>
 
+      {/* 
       <Section title='Certifications'>
         <Card
           as='a'
@@ -185,6 +173,7 @@ if (!images[imagePath])
           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         />
       </Section>
+      */}
 
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />

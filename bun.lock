@@ -6,29 +6,29 @@
       "name": "astro-theme-pure",
       "dependencies": {
         "@astrojs/check": "^0.9.6",
-        "@astrojs/rss": "^4.0.14",
-        "@astrojs/vercel": "^9.0.2",
-        "@waline/client": "^3.8.0",
-        "astro": "^5.16.6",
-        "astro-pure": "1.4.0",
-        "katex": "^0.16.27",
+        "@astrojs/rss": "^4.0.15",
+        "@astrojs/vercel": "^9.0.4",
+        "@waline/client": "^3.12.2",
+        "astro": "^5.17.3",
+        "astro-pure": "1.4.2",
+        "katex": "^0.16.33",
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
         "sharp": "^0.34.5",
         "typescript": "^5.9.3",
       },
       "devDependencies": {
-        "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-        "@typescript-eslint/parser": "^8.51.0",
-        "eslint": "^9.39.2",
-        "eslint-plugin-astro": "^1.5.0",
-        "prettier": "^3.7.4",
+        "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+        "@typescript-eslint/parser": "^8.56.1",
+        "eslint": "^9.39.3",
+        "eslint-plugin-astro": "^1.6.0",
+        "prettier": "^3.8.1",
         "prettier-plugin-astro": "^0.14.1",
       },
     },
     "packages/pure": {
       "name": "astro-pure",
-      "version": "1.4.0",
+      "version": "1.4.2",
       "bin": {
         "astro-pure": "scripts/index.js",
       },
@@ -96,7 +96,7 @@
 
     "@emmetio/css-abbreviation": ["@emmetio/css-abbreviation@2.1.8", "https://registry.npmmirror.com/@emmetio/css-abbreviation/-/css-abbreviation-2.1.8.tgz", { "dependencies": { "@emmetio/scanner": "^1.0.4" } }, "sha512-s9yjhJ6saOO/uk1V74eifykk2CBYi01STTK3WlXWGOepyKa23ymJ053+DNQjpFcy1ingpaO7AxCcwLvHFY9tuw=="],
 
-    "@emmetio/css-parser": ["@emmetio/css-parser@github:ramya-rao-a/css-parser#370c480", { "dependencies": { "@emmetio/stream-reader": "^2.2.0", "@emmetio/stream-reader-utils": "^0.1.0" } }, "ramya-rao-a-css-parser-370c480"],
+    "@emmetio/css-parser": ["@emmetio/css-parser@github:ramya-rao-a/css-parser#370c480", { "dependencies": { "@emmetio/stream-reader": "^2.2.0", "@emmetio/stream-reader-utils": "^0.1.0" } }, "ramya-rao-a-css-parser-370c480", "sha512-dYkDEiBYU6kAT6FMOUEZM5QsIOvOJ4zVC5IYTRDizfhEuAptmf+tXSaGmJSRy4HEgqITT9Af7FZxbskdg6E2xg=="],
 
     "@emmetio/html-matcher": ["@emmetio/html-matcher@1.3.0", "https://registry.npmmirror.com/@emmetio/html-matcher/-/html-matcher-1.3.0.tgz", { "dependencies": { "@emmetio/scanner": "^1.0.0" } }, "sha512-NTbsvppE5eVyBMuyGfVu2CRrLvo7J4YHb6t9sBFLyY03WYhXET37qA4zOYUjBWFCRHO7pS1B9khERtY0f5JXPQ=="],
 

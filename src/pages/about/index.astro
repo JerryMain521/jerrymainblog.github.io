@@ -8,33 +8,45 @@ const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
   { depth: 2, slug: 'tools', text: 'Tools' },
   { depth: 2, slug: 'social-networks', text: 'Social Networks' },
-  { depth: 2, slug: 'gossips', text: 'Gossips' },
   { depth: 2, slug: 'about-blog', text: 'About Blog' }
 ]
 ---
 
 <PageLayout title='About' {headings} comment>
-  <p>Developer / Designer</p>
+  <p>Undergraduate / <em>Retired</em> Minecraft Gamer / Coding Amateur</p>
   <p>
-    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
-    dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio
-    possit voluptatum.
+    Got a bit of C++ educated from primary school, but didn't get far.<br />
+    Now learning hardware at SEU, and patching up software online.<br />
+    Majoring in <em>integrated circuit</em> but often <del>pushing Claude</del> to write code.
   </p>
   <p>
-    Motto: Stay hungry, Stay foolish. <Spoiler>这里可以夹私货，比如为什么要演奏春日影！</Spoiler>
+    <em>Stay hungry, Stay foolish.</em> <Spoiler>/* you can find nothing here */</Spoiler>
   </p>
-  <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' variant='ahead' />
 
   {/* general-talk */}
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
-    <li>Lorem ipsum dolor sit amet, vidit suscipit at mei.</li>
     <li>
-      Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod
-      voluptua ne.
+      <strong>Rubik's Cube</strong>: For 3x3 Rubik's Cube, I can solve it in about 30s, and can solve other cube variants as well.
     </li>
-    <li>Ex dicat impedit mel, at eum oratio possit voluptatum.</li>
-    <li>Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.</li>
+    <li>
+      <strong>Minecraft</strong> : I have been playing Minecraft for a long time, maybe beyond 10 years <del>I forgot that</del>.
+      Now I'm deeply into the combination of redstone engineering and terrain building.
+    </li>
+    <li>
+      <strong>Coding</strong> : I wanna do some minecraft modding, but I haven't started yet. 
+      I have some experience in web development, and I'm learning more about software development in general.
+    </li>
+    <li>
+      <strong>Music</strong> : Teenage for <a href="https://music.163.com/#/user/home?id=602691444" target="_blank">JerryMain521's Netease Music</a><br />
+      Now for <a href="https://space.bilibili.com/6075139?spm_id_from=333.337.0.0" target="_blank">Animenzzz music</a>, especially his piano covers of anime music. 
+    </li>
+    <li>
+      <strong>Writing</strong> : <em>An amplitude during my senior high, now lost.</em>
+    </li>
+    <li>
+      <strong>Embedded systems</strong> : That's an interesting field but I haven't had to get into it yet. Maybe in the near future.
+    </li>
   </ul>
 
   {/* tools */}
@@ -45,28 +57,16 @@ const headings = [
     title='Design'
     tools={[
       {
-        name: 'Photoshop',
-        description: 'Picture Editing',
-        href: 'https://www.adobe.com/products/photoshop',
-        icon: import('@/assets/tools/photoshop.svg?raw')
-      },
-      {
-        name: 'Illustrator',
-        description: 'Vector Drawing',
-        href: 'https://www.adobe.com/products/illustrator',
-        icon: import('@/assets/tools/illustrator.svg?raw')
-      },
-      {
-        name: 'After Effects',
-        description: 'Motion Graphics',
-        href: 'https://www.adobe.com/products/aftereffects',
-        icon: import('@/assets/tools/aftereffects.svg?raw')
-      },
-      {
         name: 'Premiere Pro',
         description: 'Video Editing',
         href: 'https://www.adobe.com/products/premiere',
         icon: import('@/assets/tools/premiere.svg?raw')
+      },
+      {
+        name: 'OBS Studio',
+        description: 'Video Recording',
+        href: 'https://www.obsproject.com/',
+        icon: import('@/assets/tools/obsstudio.svg?raw')
       }
     ]}
   />
@@ -75,22 +75,16 @@ const headings = [
     title='Productivity'
     tools={[
       {
-        name: 'Chrome',
+        name: 'Edge',
         description: 'Browser',
-        href: 'https://www.google.com/chrome/',
-        icon: import('@/assets/tools/chrome.svg?raw')
+        href: 'https://www.microsoft.com/edge',
+        icon: import('@/assets/tools/edge.svg?raw')
       },
       {
-        name: 'Firefox',
-        description: 'Browser',
-        href: 'https://www.mozilla.org/en-US/firefox',
-        icon: import('@/assets/tools/firefox.svg?raw')
-      },
-      {
-        name: 'Notion',
-        description: 'Note Taking',
-        href: 'https://www.notion.so/',
-        icon: import('@/assets/tools/notion.svg?raw')
+        name: 'Tex Studio',
+        description: 'Note Taking with LaTeX',
+        href: 'https://www.texstudio.org/',
+        icon: import('@/assets/tools/texstudio.svg?raw')
       },
       {
         name: 'Typora',
@@ -105,22 +99,28 @@ const headings = [
     title='Development'
     tools={[
       {
-        name: 'VS Code',
+        name: 'Visual Studio Code',
         description: 'IDE',
         href: 'https://code.visualstudio.com/',
         icon: import('@/assets/tools/vscode.svg?raw')
       },
       {
-        name: 'Neovim',
+        name: 'Vim',
         description: 'IDE',
-        href: 'https://neovim.io/',
-        icon: import('@/assets/tools/neovim.svg?raw')
+        href: 'https://www.vim.org/',
+        icon: import('@/assets/tools/vim.svg?raw')
       },
       {
-        name: 'Sublime Text',
+        name: 'IntelliJ IDEA',
         description: 'IDE',
-        href: 'https://www.sublimetext.com/',
-        icon: import('@/assets/tools/sublime.svg?raw')
+        href: 'https://www.jetbrains.com/idea/',
+        icon: import('@/assets/tools/intellijidea.svg?raw')
+      },
+      {
+        name: 'Android Studio',
+        description: 'IDE',
+        href: 'https://developer.android.com/studio',
+        icon: import('@/assets/tools/androidstudio.svg?raw')
       }
     ]}
   />
@@ -129,10 +129,10 @@ const headings = [
     title='Environment'
     tools={[
       {
-        name: 'Arch Linux',
-        description: 'Linux Distribution',
-        href: 'https://archlinux.org/',
-        icon: import('@/assets/tools/archlinux.svg?raw')
+        name: 'Windows 11',
+        description: 'Framework Laptop 16',
+        href: 'https://news.microsoft.com/windows11-general-availability/',
+        icon: import('@/assets/tools/windows11.svg?raw')
       },
       {
         name: 'Ubuntu 24.04 LTS',
@@ -141,16 +141,10 @@ const headings = [
         icon: import('@/assets/tools/ubuntu.svg?raw')
       },
       {
-        name: 'MacOS Tahoe',
-        description: 'MacBook Air',
-        href: 'https://www.apple.com/macos/',
-        icon: import('@/assets/tools/apple.svg?raw')
-      },
-      {
-        name: 'Windows 11',
-        description: 'Framework Laptop 16',
-        href: 'https://news.microsoft.com/windows11-general-availability/',
-        icon: import('@/assets/tools/windows11.svg?raw')
+        name: 'Debian 12',
+        description: 'Linux Distribution',
+        href: 'https://www.debian.org/',
+        icon: import('@/assets/tools/debian.svg?raw')
       }
     ]}
   />
@@ -158,44 +152,47 @@ const headings = [
   {/* social-networks */}
   <h2 id='social-networks'>Social Networks</h2>
   <p>
-    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
-    dissentiunt, cu meliore fuisset mei, vel quod voluptua ne.
+    You can find me on the following social networks.
   </p>
   <Substats
     stats={[
       {
         platform: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/cworld1',
+        link: 'https://github.com/JerryMain521',
         text: 'followers',
-        api: 'github/cworld1'
+        count: 2
       },
       {
-        platform: 'Telegram',
-        icon: 'telegram',
-        color: '#2ca5e0',
-        link: 'https://t.me/cworld0_cn',
+        platform: 'Bilibili',
+        icon: 'bilibili',
+        color: '#ff6699',
+        link: 'https://space.bilibili.com/2089231483',
         text: 'subscribers',
-        api: 'telegram/cworld0_cn'
+        count: 51
       },
       {
         platform: 'Steam',
         icon: 'steam',
         color: '#50769d',
-        link: 'https://steamcommunity.com/id/cworld',
+        link: 'https://steamcommunity.com/profiles/76561199815322706/',
         text: 'games',
-        api: 'steamgames/76561199021278120'
+        count: 31
       }
     ]}
   />
-
+  
+  
   {/* gossips */}
+  {/*
   <h2 id='gossips'>Gossips</h2>
   <Collapse title='Lorem ipsum'>
     Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum
     dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio
     possit voluptatum.
   </Collapse>
+  */
+  }
 
   {/* about-blog */}
   <h2 id='about-blog'>About Blog</h2>
@@ -203,21 +200,13 @@ const headings = [
   <Timeline
     events={[
       {
-        date: '2024-04-29',
+        date: '2026-04-21',
         content:
-          'Website refactored using <a href="https://astro.build/" target="_blank">Astro</a> and <a href="https://github.com/srleom/astro-theme-resume" target="_blank">Astro Theme Resume</a>'
-      },
-      {
-        date: '2024-07-26',
-        content:
-          'Website abstracted as a theme and published on <a href="https://github.com/cworld1/astro-theme-pure"target="_blank">Github</a>'
-      },
-      {
-        date: '2024-07-27',
-        content: 'Began writing website docs'
+          'Cloned repository using <a href="https://github.com/cworld1/astro-theme-pure" target="_blank">astro-theme-pure</a>, and customized it.'
       }
     ]}
   />
+  {/*
   <p>
     The smooth operation and personalized customization of website also rely on the resources and
     technical support provided by the following excellent projects/service providers:
@@ -247,4 +236,5 @@ const headings = [
       >
     </li>
   </ul>
+  */}
 </PageLayout>
