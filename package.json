@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
+    "@astrojs/cloudflare": "^12.6.13",
     "@astrojs/rss": "^4.0.15",
     "@astrojs/vercel": "^9.0.4",
     "@waline/client": "^3.12.2",
