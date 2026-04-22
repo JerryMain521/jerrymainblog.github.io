@@ -19,7 +19,7 @@ const linkEditPage = 'https://github.com/cworld1/astro-theme-pure/blob/main/publ
 
 <PageLayout title='Links' {headings} comment>
   <p>They're sorted randomly.</p>
-  <h2 id='common-links'>Common Links</h2>
+  <h2 id='common-links'>Friend Links</h2>
   <FriendList list={friends[0]} />
   {/*
   <Collapse title='Links with Bad Status'>
@@ -33,7 +33,7 @@ const linkEditPage = 'https://github.com/cworld1/astro-theme-pure/blob/main/publ
   <FriendList list={friends[2]} />
 
   <h2 id='apply-links'>Apply Links</h2>
-  <p>本站信息（点击复制）The site information (click to copy)：</p>
+  <p>本站信息：</p>
   <blockquote class='not-prose grid grid-cols-[auto_1fr] gap-x-2 break-words border-s-4 ps-4'>
     {
       linksConf.applyTip.map(({ name, val }) => {
