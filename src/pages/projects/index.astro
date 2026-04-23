@@ -4,16 +4,21 @@ import { Image } from 'astro:assets'
 import { Button, Collapse, Icon } from 'astro-pure/user'
 import PageLayout from '@/layouts/CommonPage.astro'
 import ProjectSection from '@/components/projects/ProjectSection.astro'
+import Sponsors from '@/components/projects/Sponsors.astro'
+import Sponsorship from '@/components/projects/Sponsorship.astro'
+import alipay from '@/assets/alipay-qrcode.jpg'
+import KeyIcon from '@/assets/icons/key.svg'
+import wechat from '@/assets/wechat-qrcode.jpg'
 
 const headings = [
-  { depth: 2, slug: 'programs', text: 'Programs' },
-  { depth: 2, slug: 'learnings', text: 'Learnings' },
-  { depth: 2, slug: 'others', text: 'Others' }
+  { depth: 2, slug: 'My Repositories', text: 'My Repositories' },
+  { depth: 2, slug: 'Friends Repositories', text: 'Friends Repositories' },
+  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
 ]
 ---
 
 <PageLayout title='Projects' {headings} view>
-  <h2 id='programs'>Programs</h2>
+  <h2 id='My Repositories'>My Repositories</h2>
   <ProjectSection
     projects={[
       {
@@ -33,14 +38,7 @@ const headings = [
     />
   </Collapse>
 
-  <h2 id='learnings'>Learnings</h2>
-  <ProjectSection
-    class='my-2'
-    projects={[
-    ]}
-  />
-
-  <h2 id='others'>Others</h2>
+  <h2 id='Friends Repositories'>Friends Repositories</h2>
   <ProjectSection
     projects={[
       {
@@ -50,10 +48,35 @@ const headings = [
       }
     ]}
   />
+
+  <h2 id='sponsorship'>Sponsorship</h2>
+  <p>Please consider sponsoring me if you like my work. It will be a great encouragement for me to keep going and create more content. Thank you very much!</p>
+  
+  <strong>Be careful on the account information!!!</strong><br />
+
+  <strong>Be careful on the account information!!!</strong><br />
+  
+  <strong>Be careful on the account information!!!</strong><br />
+
+  <br />
+
+  <Sponsorship
+    methods={[
+      { name: 'WeChat', icon: 'wechat-pay', image: wechat },
+      { name: 'Alipay', icon: 'alipay', image: alipay }
+    ]}
+  />
+  <p>Please leave a message or contact me proactively after sponsorship. My WeChat is:
+    <code style='cursor: pointer'
+      onclick='const m=atob(this.textContent);alert("WeChat Account: "+m)'
+    >SmVycnlNYWluNjY2</code>
+    (click to reveal WeChat ID).
+  </p>
+
 </PageLayout>
 
 <style>
-  /* .sponsorship-card {
+  .sponsorship-card {
     & .sponsorship-card-img {
       opacity: 0.3;
       --un-blur: blur(4px);
@@ -69,5 +92,5 @@ const headings = [
         --un-blur: blur(0);
       }
     }
-  } */
+  } 
 </style>
