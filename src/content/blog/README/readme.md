@@ -44,17 +44,23 @@ site.webmanifest
 ```
 ## 网站的基本信息更改
 ### site.config.ts更改
-文件地址为：
+此文件直译过来是：**网站注册表**，`.ts`后缀代表用`typescript`编写。项目中的文件地址为：
 ```bash
 ./src/site.config.ts
 ```
 利用`Ctrl + F`查找文件的一些关键字，这里一一列出，注释都已表明在源文件，这里不作展示：
-- title
+- title 即网页的名字，如下图：
+
+![](./old_header.png)
+
+![](./new_header.png)
+
+它们写在下列字段
 ```typescript
 title: 'Astro Theme Pure'
 title: 'JerryMain Island'
 ```
-- author
+- author 即网页的所有者，如下图：
 ```typescript
 author: 'Pure Lab'
 author: 'JerryMain'
