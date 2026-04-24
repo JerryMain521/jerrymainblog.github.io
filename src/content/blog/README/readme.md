@@ -14,7 +14,8 @@ tags:
 
 所以他就写了这样一段markdown作为参考，而我跟着他的教程，创建了此网站，遂将其搬运过来。
 
-## 网页图标替换
+## 图片替换
+### 网页图标替换
 > 网页图标就是最上面那个图片，最初大概是这样的：
 >
 > ![old_header](old_header.png)
@@ -42,9 +43,17 @@ site.webmanifest
 ```bash
 ./public/favicon
 ```
+
+### 主页头像替换
+主页头像的位置在：
+```bash
+./src/assets/avatar.png
+```
+直接用你保存好的图片替换即可，不过需要文件名和后缀相同，否则需要更改源码。
+
 ## 网站的基本信息更改
 ### site.config.ts更改
-此文件直译过来是：**网站注册表**，`.ts`后缀代表用`typescript`编写。项目中的文件地址为：
+此文件直译过来是：**网站注册表**，个人理解为网站信息的注册地，`.ts`后缀代表用`typescript`编写。此文件在项目中的地址为：
 ```bash
 ./src/site.config.ts
 ```
@@ -55,22 +64,47 @@ site.webmanifest
 
 ![](./new_header.png)
 
-它们写在下列字段
+它们写在下列字段，你可以用你的眼睛一行一行搜索，但还是建议使用`Ctrl + F`查找：
 ```typescript
 title: 'Astro Theme Pure'
 title: 'JerryMain Island'
 ```
+
+当然title的改变也会影响导航栏的改变，如下图左侧内容：
+
+![](./old_nav.png)
+
+![](./new_nav.png)
+
 - author 即网页的所有者，如下图：
+
+|  |  |
+|:---:|:---:|
+| ![](./old_avatar.png) | ![](./new_avatar.png) |
+
+与上述同理，使用`Ctrl + F`查找下列字段并修改：
+
 ```typescript
 author: 'Pure Lab'
 author: 'JerryMain'
 ```
-- description
+
+当然这里只说明了author的更改，至于定位、网页以及头像的更改可以跳转到[下文](#博客主页面mainpage更改)的第一部分。
+
+
+- description 个人介绍，原文是乔布斯的名言，可以自行更改：
 ```typescript
 description: 'Stay hungry, stay foolish'
 description: 'Stay stupid, stay android'
 ```
-- navigation
+- navigation 即导航栏，也就是下图右侧的内容：
+
+![](./old_nav.png)
+
+![](./new_nav.png)
+
+你可以找到这样的字段进行更改，我个人删除了`Docs`官方说明文档：
+
 ```typescript
   header: {
     menu: [
@@ -83,30 +117,71 @@ description: 'Stay stupid, stay android'
     ]
   }
 ```
-- ICP
+- ICP 即网络内容服务商，按照相关要求进行填写即可，它的显示位置在页脚左侧：
+
+![](./old_footer.png)
+
+![](./new_footer.png)
+
 ```typescript
 title: 'Moe ICP 114514'
 title: 'Your ICP'
 ```
-- GitHub Page
+- GitHub Page 即页脚指向的仓库，位置在上图右侧，可通过以下字段查询：
 ```typescript
 social: [
   { icon: 'github', label: 'GitHub', href: 'https://github.com/cworld1/astro-theme-pure' },
   { icon: 'rss', label: 'RSS', href: '/rss.xml' }
 ]
 ```
+对于这条代码的处理方法稍有不同，各位可酌情借鉴，这里不作展开：
 ```typescript
 social: { github: 'https://github.com/JerryMain521/website' }
 ```
-- Link
+- Link 即你网站的主页地址：
 ```typescript
 name: 'Link', val: 'https://astro-pure.js.org/'
 name: 'Link', val: 'https://jerrymain.top/'
 ```
-- Avatar
+- Avatar 就是显示在页面上的头像图片，它直接引用了你网站`/favicon/`目录下的图标文件作为头像，我们直接替换前面的网址就可以：
 ```typescript
 name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' 
 name: 'Avatar', val: 'https://jerrymain.top/favicon/favicon.ico' 
+```
+
+### 博客主页面（MainPage）更改
+
+![](./new_mainpage.png)
+
+这是我们一进来的界面，这个界面就是主页面。前面只介绍了部分细节的更改，这里做全部的解释。
+
+你需要在这个路径中找到MainPage的源代码：
+
+```bash
+./src/pages/index.astro
+```
+
+- 地址和个人GitHub网页地址的更改
+
+在前面我们已经讲过了关于`author`的更改，这里再放出对比图，下面就是要换地址和仓库：
+
+|  |  |
+|:---:|:---:|
+| ![](./old_avatar.png) | ![](./new_avatar.png) |
+
+这里是地址，搜索到此字段后，可以将`Somewhere`改成你想改的地址：
+```typescript
+<Label title='Somewhere'>
+```
+
+这里是你的GitHub仓库地址，搜到后可以将`title`和`href`字段改成你的信息：
+```typescript
+<Label
+  title='Source code'                                 //here
+  as='a'
+  href='https://github.com/cworld1/astro-theme-pure'  //here
+  target='_blank'
+>
 ```
 
 ### about的index.astro
