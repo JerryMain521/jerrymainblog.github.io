@@ -134,7 +134,7 @@ social: [
   { icon: 'rss', label: 'RSS', href: '/rss.xml' }
 ]
 ```
-对于这条代码的处理方法稍有不同，各位可酌情借鉴，这里不作展开：
+对于这条代码的处理方法稍有不同，各位可**酌情借鉴**，这里不作展开：
 ```typescript
 social: { github: 'https://github.com/JerryMain521/website' }
 ```
@@ -161,20 +161,19 @@ name: 'Avatar', val: 'https://jerrymain.top/favicon/favicon.ico'
 ./src/pages/index.astro
 ```
 
-- 地址和个人GitHub网页地址的更改
-
 在前面我们已经讲过了关于`author`的更改，这里再放出对比图，下面就是要换地址和仓库：
 
 |  |  |
 |:---:|:---:|
 | ![](./old_avatar.png) | ![](./new_avatar.png) |
 
-这里是地址，搜索到此字段后，可以将`Somewhere`改成你想改的地址：
+- 这里是地址，搜索到此字段后，可以将`Somewhere`改成你想改的地址：
 ```typescript
 <Label title='Somewhere'>
+<Label title='Southeast University'>
 ```
 
-这里是你的GitHub仓库地址，搜到后可以将`title`和`href`字段改成你的信息：
+- 这里是你的GitHub仓库地址，搜到后可以将`title`和`href`字段改成你的信息：
 ```typescript
 <Label
   title='Source code'                                 //here
@@ -184,12 +183,158 @@ name: 'Avatar', val: 'https://jerrymain.top/favicon/favicon.ico'
 >
 ```
 
+- 细心一点的话可以观察到在下方有一个图标：
+
+![](get_template.png)
+
+这是作者给此模板建立的一个仓库通道，你可以选择利用注释删除获保留。它的源代码是这样的：
+```typescript
+{/* Get template */}
+<a
+href='https://github.com/cworld1/astro-theme-pure'
+target='_blank'
+class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
+>
+  <span class='relative flex items-center justify-center'>
+    <span
+    class='absolute size-2 animate-ping rounded-full border border-green-400  bg-green-400 opacity-75'
+    ></span>
+    <span class='size-2 rounded-full bg-green-400'></span>
+  </span>
+  <p class='font-medium text-muted-foreground'>Get Template</p>
+</a>
+```
+
+- 下面是首页介绍更改，在页面位置如下：
+
+![alt text](image.png)
+
+代码如下，可以自行更改如`Developer / Designer`的字样：
+```typescript
+<Section title='About'>
+  <p class='text-muted-foreground'>Developer / Designer</p>
+  <p class='text-muted-foreground'>
+    Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione
+    indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel,
+    at eum oratio possit voluptatum.
+  </p>
+  <Button title='More about me' class='w-fit self-end' href='/about' variant='ahead' />
+</Section>
+```
+
+- 教育经历更改：
+
+![alt text](image-1.png)
+
+源码如下：
+```typescript
+<Section title='Education'>
+  <Card
+    as='a'
+    heading='Lorem ipsum'
+    subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei.'
+    date='August 2021 - July 2025'
+    href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+  >
+    {
+      /* <ul class='ms-4 list-disc text-muted-foreground'>
+    <li>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+      molestiae laboriosam pariatur!
+    </li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+  </ul> */
+    }
+  </Card>
+</Section>
+```
+我做了一点更改：
+```typescript
+<Section title='Education'>
+  <Card
+    as='a'
+    heading='Southeast University'
+    subheading='Majoring in Integrated Circuit Design and Integrated System'
+    date='August 2024 - July 2028'
+    href='https://www.seu.edu.cn/'
+  >
+    <img
+      class='absolute end-0 z-0 m-0 -my-3 h-full w-1/2 object-cover opacity-40'
+      src='/images/seu.svg'
+    />
+    {
+      /* <ul class='ms-4 list-disc text-muted-foreground'>
+    <li>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
+      molestiae laboriosam pariatur!
+    </li>
+    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+  </ul> */
+    }
+  </Card>
+</Section>
+```
+- Website List
+```typescript
+<Section title='Website List'>
+  <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+    <ProjectCard
+      href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      heading='Lorem ipsum'
+      subheading='Do not go gentle into that good night'
+      imagePath='/src/assets/projects/1.avif'
+    />
+    <ProjectCard
+      href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      heading='Lorem ipsum'
+      subheading='Old age burn and rave at close of day'
+      imagePath='/src/assets/projects/2.avif'
+    />
+    <ProjectCard
+      href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      heading='Lorem ipsum'
+      subheading='Rage, rage against the dying of the light'
+      imagePath='/src/assets/projects/3.avif'
+    />
+    <ProjectCard
+      href='/projects'
+      heading='More projects'
+      subheading='Check out more projects'
+      imagePath='/src/assets/projects/4.avif'
+    />
+  </div>
+</Section>
+```
+- Certifications更改
+```typescript
+<Section title='Certifications'>
+  <Card
+     as='a'
+    heading='Lorem ipsum'
+    subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio possit voluptatum. Dicat ceteros cu vim. Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.'
+    date='July 2024'
+    href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+  />
+</Section>
+```
+- Skills
+```typescript
+<Section title='Skills'>
+  <SkillLayout title='Languages' skills={languages} />
+  <SkillLayout title='Frontend' skills={frontend} />
+  <SkillLayout title='Backend' skills={backend} />
+</Section>
+```
 ### about的index.astro
 文件地址为：
 ```bash
 ./src/pages/about/index.astro
 ```
-下面拆解这个文件的内容，当然如果你能看懂HTML的话就变得极其简单：
+下面拆解这个文件的内容，当然如果你能看懂HTML的话就<del>可以跳过</del>：
+
+- 自我介绍
+
+![alt text](image-2.png)
 ```astro
   <p>Developer / Designer</p>
   <p>
@@ -201,6 +346,9 @@ name: 'Avatar', val: 'https://jerrymain.top/favicon/favicon.ico'
     Motto: Stay hungry, Stay foolish. <Spoiler>这里可以夹私货，比如为什么要演奏春日影！</Spoiler>
   </p>
 ```
+- 赞助按钮，可以选择删除与否
+
+![alt text](image-3.png)
 ```astro
   <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' variant='ahead' />
 ```
@@ -293,8 +441,42 @@ name: 'Avatar', val: 'https://jerrymain.top/favicon/favicon.ico'
 ./src/pages/links/index.astro
 ```
 
+但是这只是一个调用文件，真正的内容在：
+```bash
+./public/links.json
+```
+可以按照下方的格式更改：
+```json
+{
+  "friends": [
+    {
+      "id_name": "cf-links",
+      "desc": "Common links included in circle friends",
+      "link_list": [
+        {
+          "name": "ByteString",
+          "intro": "我去，不早说",
+          "link": "https://bytestring.top",
+          "avatar": "/friends/bytestring.webp"
+        }
+      ]
+    },
+    {
+      "id_name": "inactive-links",
+      "desc": "Inactive or rule-breaking friends",
+      "link_list": []
+    },
+    {
+      "id_name": "special-links",
+      "desc": "Other special links",
+      "link_list": []
+    }
+  ]
+}
+```
 ### projects的index.astro
 文件地址为：
 ```bash
 ./src/pages/projects/index.astro
 ```
+页面分为三部分**My Repositories**,**Friends Repositories**和**SponsorShip**
