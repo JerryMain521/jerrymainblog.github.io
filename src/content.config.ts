@@ -65,6 +65,7 @@ const tutorials = defineCollection({
       description: z.string().max(160).optional(),
       publishDate: z.coerce.date().optional(),
       updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
       draft: z.boolean().default(false),
       order: z.number().default(999)
     })
